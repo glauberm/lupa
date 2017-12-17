@@ -9612,7 +9612,7 @@ blockquote {
 .navbar .navbar-brand-wrapper {
   background: #ffe100;
   background: linear-gradient(45deg, #ffc800 0%, #ffe100 100%);
-  padding: .35rem .75rem .65rem .65rem;
+  padding: .35rem .75rem .75rem .65rem;
   margin: -1rem 0;
   border-radius: 1rem;
   -webkit-transform: rotateZ(-10deg) scale(1);
@@ -9760,7 +9760,7 @@ blockquote {
 .site-footer {
   color: #7d6830;
   margin: 1rem 0;
-  padding: 0 1rem; }
+  padding: 0 1rem .5rem; }
 
 .site-footer .row > div {
   padding-top: .5rem; }
