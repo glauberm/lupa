@@ -20,11 +20,9 @@ if ( post_password_required() ) {
 
 <div class="comments-area" id="comments">
 
-	<?php // You can start editing here -- including this comment! ?>
+	<hr/>
 
 	<?php if ( have_comments() ) : ?>
-
-		<hr/>
 
 		<h2 class="h3 comments-title mb-4">
 

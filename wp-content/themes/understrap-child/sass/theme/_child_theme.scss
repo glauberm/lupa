@@ -35,7 +35,7 @@ a {
 blockquote {
     margin-bottom: 1rem;
     font-size: 1.25rem;
-    border-left: 1px dotted #d9cba3;
+    border-left: 1px dotted $navbar-dark-disabled-color;
     padding-left: 1rem;
 }
 
@@ -64,6 +64,16 @@ blockquote {
             justify-content: flex-end;
 
 	.navbar-nav {
+		.nav-link {
+			padding-left: .75rem;
+			padding-right: .75rem;
+
+			@include media-breakpoint-down(lg) {
+				padding-left: 0;
+				padding-right: 0;
+		    }
+		}
+
 		@include media-breakpoint-down(lg) {
 			padding-top: 2rem;
 	    }
@@ -104,13 +114,10 @@ blockquote {
         margin-right: 0;
         padding-bottom: 0;
     }
+}
 
-    a,
-    a:hover,
-    a:focus,
-    a:active {
-        color: rgba($body-color, .75);
-    }
+.dropdown-menu {
+	color: $navbar-dark-color;
 }
 
 /* HEADER */
@@ -120,12 +127,22 @@ blockquote {
     background-color: $primary;
     padding: 1.7rem 0 1.8rem;
 
+	h1,.h1 {
+		color: $navbar-dark-background-color;
+	}
+
     .styled-subheader {
         font-size: 80%;
-        color: rgba($body-color, .65);
+        color: lighten($body-color, 15%);
 
         a {
-            color: rgba($body-color, .85);
+            color: lighten($body-color, 10%);
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: lighten($body-color, 5%);
+			}
         }
 
         :last-child {
@@ -138,19 +155,12 @@ blockquote {
 .content {
     padding-top: 1.5rem;
     padding-bottom: 1rem;
-    background-color: #FFF;
+    background-color: $white;
     position: relative;
     z-index: 0;
-    -webkit-box-shadow: 0 1rem 2rem -1rem #d9cba3;
-            box-shadow: 0 1rem 2rem -1rem #d9cba3;
+    -webkit-box-shadow: 0 1rem 2rem -1rem $navbar-dark-disabled-color;
+            box-shadow: 0 1rem 2rem -1rem $navbar-dark-disabled-color;
     border-radius: 0 0 0.25rem 0.25rem;
-}
-
-.content {
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6 {
-        color: #8c6900;
-    }
 }
 
 .content-area {
@@ -158,11 +168,11 @@ blockquote {
 }
 
 /* MAIN */
-.site-main .post+.post {
+.site-main article+article {
     margin-top: 1rem;
 }
 
-.site-main .post .entry-header {
+.site-main article .entry-header {
     padding: 1rem 0;
 
     .entry-meta {
@@ -170,7 +180,7 @@ blockquote {
     }
 }
 
-.site-main .post:first-child .entry-header {
+.site-main article:first-child .entry-header {
     padding-top: 0;
 }
 
@@ -182,16 +192,23 @@ blockquote {
     margin-bottom: 1rem;
 }
 
-.wp-caption-text {
-    color: #8c6900;
+.site-main .wp-caption-text {
+    color: $headings-color;
     margin-top: -1rem;
     margin-bottom: 1rem;
     padding: 1rem;
     font-size: 80%;
     font-style: italic;
-    a {
-        color: rgba($body-color, .85);
-    }
+
+	a {
+		color: lighten($body-color, 10%);
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: lighten($body-color, 5%);
+		}
+	}
 }
 
 /* COMMENTS */
@@ -200,7 +217,7 @@ blockquote {
 }
 
 .comments-area hr {
-    border-top: 1px dotted #d9cba3;
+    border-top: 1px dotted $navbar-dark-disabled-color;
 }
 
 .comments-area .comment img {
@@ -228,7 +245,7 @@ blockquote {
 .no-comments {
     text-align: center;
     padding: 1rem 1rem 0;
-    color: #7d6830;
+    color: $secondary;
 }
 
 /* SEARCH */
@@ -249,7 +266,7 @@ blockquote {
 .entry-footer span {
     font-style: italic;
     padding-right: 1rem;
-    color: #999;
+    color: $gray-600;
 }
 
 .entry-footer span:last-child {
@@ -267,7 +284,7 @@ blockquote {
 
 /* FOOTER */
 .site-footer {
-    color: #7d6830;
+    color: $secondary;
 	margin: 1rem 0;
 	padding: 0 1rem .5rem;
 }
@@ -278,7 +295,7 @@ blockquote {
 
 /* EXTRAS */
 .edit-link {
-    border-bottom: 1px dotted rgba($body-color, .35);
+    font-weight: bold;
     font-style: italic;
 }
 
@@ -289,7 +306,7 @@ blockquote {
 
 .sticky {
     padding: 1.5rem;
-    border: 1px dotted #d9cba3;
+    border: 1px dotted $navbar-dark-disabled-color;
     border-radius: 0.75rem;
 }
 

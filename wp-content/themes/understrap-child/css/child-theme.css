@@ -326,7 +326,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: inherit;
   font-weight: bold;
   line-height: 1.2;
-  color: inherit; }
+  color: #8c6900; }
 
 h1, .h1 {
   font-size: 2.5rem; }
@@ -2725,7 +2725,7 @@ tbody.collapse.show {
   color: #261D00;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #1a1300;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem; }
@@ -2814,19 +2814,19 @@ tbody.collapse.show {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #fff5d9;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
   border: 0; }
   .dropdown-item:focus, .dropdown-item:hover {
-    color: #16181b;
+    color: #ffe18d;
     text-decoration: none;
-    background-color: #f8f9fa; }
+    background-color: transparent; }
   .dropdown-item.active, .dropdown-item:active {
-    color: #fff;
+    color: #fff5d9;
     text-decoration: none;
-    background-color: #ffc000; }
+    background-color: transparent; }
   .dropdown-item.disabled, .dropdown-item:disabled {
     color: #868e96;
     background-color: transparent; }
@@ -4015,7 +4015,7 @@ tbody.collapse.show {
 .navbar-dark .navbar-nav .nav-link {
   color: #fff5d9; }
   .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-    color: rgba(255, 245, 217, 0.75); }
+    color: #ffe18d; }
   .navbar-dark .navbar-nav .nav-link.disabled {
     color: #d9cba3; }
 
@@ -5052,7 +5052,7 @@ button.close {
   padding: 0.5rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
-  color: inherit;
+  color: #8c6900;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-top-left-radius: calc(0.3rem - 1px);
@@ -7158,19 +7158,19 @@ a.skip-link {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529 !important;
+  color: #fff5d9 !important;
   text-align: inherit;
   white-space: nowrap;
   background: none;
   border: 0; }
   .navbar-dark .navbar-nav .dropdown-menu .nav-link:focus, .navbar-dark .navbar-nav .dropdown-menu .nav-link:hover {
-    color: #16181b !important;
+    color: #ffe18d !important;
     text-decoration: none;
-    background-color: #f8f9fa; }
+    background-color: transparent; }
   .navbar-dark .navbar-nav .dropdown-menu .nav-link.active, .navbar-dark .navbar-nav .dropdown-menu .nav-link:active {
-    color: #fff !important;
+    color: #fff5d9 !important;
     text-decoration: none;
-    background-color: #ffc000; }
+    background-color: transparent; }
   .navbar-dark .navbar-nav .dropdown-menu .nav-link.disabled, .navbar-dark .navbar-nav .dropdown-menu .nav-link:disabled {
     color: #868e96 !important;
     background-color: transparent; }
@@ -9602,6 +9602,13 @@ blockquote {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end; }
+  .navbar-collapse .navbar-nav .nav-link {
+    padding-left: .75rem;
+    padding-right: .75rem; }
+    @media (max-width: 1199.99px) {
+      .navbar-collapse .navbar-nav .nav-link {
+        padding-left: 0;
+        padding-right: 0; } }
   @media (max-width: 1199.99px) {
     .navbar-collapse .navbar-nav {
       padding-top: 2rem; } }
@@ -9633,11 +9640,9 @@ blockquote {
     transform: rotateZ(8deg);
     margin-right: 0;
     padding-bottom: 0; }
-  .navbar .navbar-brand-wrapper a,
-  .navbar .navbar-brand-wrapper a:hover,
-  .navbar .navbar-brand-wrapper a:focus,
-  .navbar .navbar-brand-wrapper a:active {
-    color: rgba(38, 29, 0, 0.75); }
+
+.dropdown-menu {
+  color: #fff5d9; }
 
 /* HEADER */
 .styled-header {
@@ -9645,11 +9650,15 @@ blockquote {
   z-index: 1;
   background-color: #ffc000;
   padding: 1.7rem 0 1.8rem; }
+  .styled-header h1, .styled-header .h1 {
+    color: #261d00; }
   .styled-header .styled-subheader {
     font-size: 80%;
-    color: rgba(38, 29, 0, 0.65); }
+    color: #735700; }
     .styled-header .styled-subheader a {
-      color: rgba(38, 29, 0, 0.85); }
+      color: #594400; }
+      .styled-header .styled-subheader a:hover, .styled-header .styled-subheader a:focus, .styled-header .styled-subheader a:active {
+        color: #403000; }
     .styled-header .styled-subheader :last-child {
       margin-bottom: 0; }
 
@@ -9657,30 +9666,26 @@ blockquote {
 .content {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
-  background-color: #FFF;
+  background-color: #fff;
   position: relative;
   z-index: 0;
   -webkit-box-shadow: 0 1rem 2rem -1rem #d9cba3;
   box-shadow: 0 1rem 2rem -1rem #d9cba3;
   border-radius: 0 0 0.25rem 0.25rem; }
 
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6,
-.content .h1, .content .h2, .content .h3, .content .h4, .content .h5, .content .h6 {
-  color: #8c6900; }
-
 .content-area {
   padding-bottom: 1rem; }
 
 /* MAIN */
-.site-main .post + .post {
+.site-main article + article {
   margin-top: 1rem; }
 
-.site-main .post .entry-header {
+.site-main article .entry-header {
   padding: 1rem 0; }
-  .site-main .post .entry-header .entry-meta {
+  .site-main article .entry-header .entry-meta {
     font-size: 80%; }
 
-.site-main .post:first-child .entry-header {
+.site-main article:first-child .entry-header {
   padding-top: 0; }
 
 .site-main #secondary img,
@@ -9690,15 +9695,17 @@ blockquote {
 .site-main img.wp-post-image {
   margin-bottom: 1rem; }
 
-.wp-caption-text {
+.site-main .wp-caption-text {
   color: #8c6900;
   margin-top: -1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   font-size: 80%;
   font-style: italic; }
-  .wp-caption-text a {
-    color: rgba(38, 29, 0, 0.85); }
+  .site-main .wp-caption-text a {
+    color: #594400; }
+    .site-main .wp-caption-text a:hover, .site-main .wp-caption-text a:focus, .site-main .wp-caption-text a:active {
+      color: #403000; }
 
 /* COMMENTS */
 .comments-area {
@@ -9744,7 +9751,7 @@ blockquote {
 .entry-footer span {
   font-style: italic;
   padding-right: 1rem;
-  color: #999; }
+  color: #868e96; }
 
 .entry-footer span:last-child {
   padding-right: 0; }
@@ -9767,7 +9774,7 @@ blockquote {
 
 /* EXTRAS */
 .edit-link {
-  border-bottom: 1px dotted rgba(38, 29, 0, 0.35);
+  font-weight: bold;
   font-style: italic; }
 
 .page-links {
