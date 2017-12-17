@@ -1,0 +1,373 @@
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/PTS55F_W.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/PTS56F_W.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/PTS75F_W.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PT Sans';
+	src: url('../fonts/PTS76F_W.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* GENERAL */
+a {
+    -webkit-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+}
+
+blockquote {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    border-left: 1px dotted $navbar-dark-disabled-color;
+    padding-left: 1rem;
+}
+
+.wrapper {
+    padding: 0;
+}
+
+.align-center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+    border-bottom: 5px solid $primary;
+}
+
+.navbar-dark {
+    background-color: $navbar-dark-background-color;
+}
+
+.navbar-collapse {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+
+	.navbar-nav {
+		.nav-link {
+			@include media-breakpoint-down(md) {
+				padding-left: 0;
+				padding-right: 0;
+		    }
+
+			@include media-breakpoint-up(md) {
+				padding-left: .5rem;
+				padding-right: .5rem;
+		    }
+
+			@include media-breakpoint-up(lg) {
+				padding-left: 1rem;
+				padding-right: 1rem;
+		    }
+		}
+
+		@include media-breakpoint-down(md) {
+			padding-top: 2rem;
+	    }
+
+		@include media-breakpoint-up(md) {
+			padding-top: 0;
+	    }
+	}
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar .navbar-brand-wrapper {
+	background: #ffe100;
+	background: linear-gradient(45deg, #ffc800 0%,#ffe100 100%);
+    padding: .35rem .75rem .75rem .65rem;
+    margin: -1rem 0;
+    border-radius: 1rem;
+    -webkit-transform: rotateZ(-10deg) scale(1);
+            transform: rotateZ(-10deg) scale(1);
+    -webkit-box-shadow: 0 .35rem 4rem rgba($navbar-dark-background-color,0.75);
+            box-shadow: 0 .35rem 4rem rgba($navbar-dark-background-color,0.75);
+    position: relative;
+    z-index: 2;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+        -webkit-box-shadow: 0 .35rem 3rem rgba($navbar-dark-background-color,0.75);
+                box-shadow: 0 .35rem 3rem rgba($navbar-dark-background-color,0.75);
+        -webkit-transform: rotateZ(-11deg) scale(0.95);
+                transform: rotateZ(-11deg) scale(0.95);
+    }
+
+    .navbar-brand {
+        -webkit-transform: rotateZ(8deg);
+                transform: rotateZ(8deg);
+        margin-right: 0;
+        padding-bottom: 0;
+    }
+}
+
+.dropdown-menu {
+	color: $navbar-dark-color;
+}
+
+/* HEADER */
+.styled-header {
+    position: relative;
+    z-index: 1;
+    background-color: $primary;
+    padding: 1.7rem 0 1.8rem;
+
+	h1,.h1 {
+		color: $navbar-dark-background-color;
+	}
+
+    .styled-subheader {
+        font-size: 80%;
+        color: lighten($body-color, 15%);
+
+        a {
+            color: lighten($body-color, 10%);
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: lighten($body-color, 5%);
+			}
+        }
+
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* CONTENT */
+.content {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    background-color: $white;
+    position: relative;
+    z-index: 0;
+    -webkit-box-shadow: 0 1rem 2rem -1rem $navbar-dark-disabled-color;
+            box-shadow: 0 1rem 2rem -1rem $navbar-dark-disabled-color;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.content-area {
+    padding-bottom: 1rem;
+}
+
+/* MAIN */
+.site-main article+article {
+    margin-top: 1rem;
+}
+
+.site-main article .entry-header {
+    padding: 1rem 0;
+
+    .entry-meta {
+        font-size: 80%;
+    }
+}
+
+.site-main article:first-child .entry-header {
+    padding-top: 0;
+}
+
+.site-main #secondary img,
+.site-main article img,
+.site-main figure,
+.site-main img,
+.site-main img.wp-post-image {
+    margin-bottom: 1rem;
+}
+
+.site-main .wp-caption-text {
+    color: $headings-color;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 80%;
+    font-style: italic;
+
+	a {
+		color: lighten($body-color, 10%);
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: lighten($body-color, 5%);
+		}
+	}
+}
+
+/* COMMENTS */
+.comments-area {
+    font-size: 80%;
+}
+
+.comments-area hr {
+    border-top: 1px dotted $navbar-dark-disabled-color;
+}
+
+.comments-area .comment img {
+    margin-bottom: 0.25rem;
+}
+
+.comments-area .comment-body {
+    margin-bottom: 2rem;
+}
+
+.comments-area .children {
+    list-style: none;
+}
+
+.comments-area .comment-metadata,
+.comments-area .comment-content {
+    padding-left: 1rem;
+}
+
+.comments-area .comment-metadata {
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+.no-comments {
+    text-align: center;
+    padding: 1rem 1rem 0;
+    color: $secondary;
+}
+
+/* SEARCH */
+.widget_search .assistive-text {
+    visibility: hidden;
+}
+
+/* AUTHOR */
+.author-posts li+li {
+    margin-top: 1rem;
+}
+
+/* CONTENT FOOTER */
+.entry-footer {
+    font-size: 80%;
+}
+
+.entry-footer span {
+    font-style: italic;
+    padding-right: 1rem;
+    color: $gray-600;
+}
+
+.entry-footer span:last-child {
+    padding-right: 0;
+}
+
+.nav-previous,
+.nav-next {
+    width: 50%;
+}
+
+.nav-next {
+    text-align: right;
+}
+
+/* FOOTER */
+.site-footer {
+    color: $secondary;
+	margin: 1rem 0;
+	padding: 0 1rem .5rem;
+}
+
+.site-footer .row > div {
+	padding-top: .5rem;
+}
+
+/* EXTRAS */
+.edit-link {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.page-links {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sticky {
+    padding: 1.5rem;
+    border: 1px dotted $navbar-dark-disabled-color;
+    border-radius: 0.75rem;
+}
+
+.pagination {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $spacer;
+  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+
+  th,
+  td {
+    padding: $table-cell-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid $table-border-color;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  tbody + tbody {
+    border-top: (2 * $table-border-width) solid $table-border-color;
+  }
+
+  table {
+    background-color: $body-bg;
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+      }
+    }
+  }
+}
