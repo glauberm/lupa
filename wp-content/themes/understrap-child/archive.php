@@ -20,9 +20,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	<header class="page-header styled-header">
 		<div class="<?php echo esc_attr( $container ); ?>">
 			<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-			<div class="styled-subheader">
-				<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
-			</div>
 		</div>
 	</header><!-- .page-header -->
 
@@ -40,6 +37,8 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 			<?php get_template_part( 'global-templates/primary-check' ); ?>
 
 				<main class="site-main" id="main">
+
+					<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
 					<?php if ( have_posts() ) : ?>
 

@@ -22,3 +22,6 @@ function theme_enqueue_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
+/* Shortcodes in category description */
+add_filter( 'term_description', 'do_shortcode' );
