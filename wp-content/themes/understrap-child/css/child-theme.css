@@ -9725,7 +9725,8 @@ blockquote {
   font-size: 80%;
   padding: 1rem;
   border-radius: .25rem;
-  background-color: #fffcf3;
+  background-color: #fffefa;
+  border: 1px dotted #fff5d9;
   margin-top: 1rem; }
   .site-main .entry-author img {
     margin-bottom: 0; }

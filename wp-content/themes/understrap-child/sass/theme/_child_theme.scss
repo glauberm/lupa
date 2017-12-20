@@ -236,7 +236,8 @@ blockquote {
 		font-size: 80%;
 		padding: 1rem;
 		border-radius: .25rem;
-		background-color: lighten($body-bg, 5%);
+		background-color: lighten($body-bg, 6.5%);
+		border: 1px dotted $body-bg;
 		margin-top: 1rem;
 
 		img {
