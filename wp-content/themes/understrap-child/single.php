@@ -20,12 +20,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-				<div class="entry-meta styled-subheader">
-
-					<?php understrap_posted_on(); ?>
-
-				</div><!-- .entry-meta -->
-
 			</div>
 
 		</header><!-- .entry-header -->

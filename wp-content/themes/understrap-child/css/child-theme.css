@@ -9680,28 +9680,12 @@ blockquote {
 .content-area {
   padding-bottom: 1rem; }
 
-.entry-meta {
-  font-size: 80%;
-  color: #868e96;
-  /*border: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;*/ }
-
 /* MAIN */
 .site-main article + article {
   margin-top: 1rem; }
 
 .site-main article .entry-header {
   padding: 1rem 0 0.5rem; }
-  .site-main article .entry-header .entry-meta {
-    font-size: 80%; }
 
 .site-main article:first-child .entry-header {
   padding-top: 0; }
@@ -9725,6 +9709,13 @@ blockquote {
     color: #594400; }
     .site-main .wp-caption-text a:hover, .site-main .wp-caption-text a:focus, .site-main .wp-caption-text a:active {
       color: #403000; }
+
+@media (max-width: 575.99px) {
+  .site-main .alignleft, .site-main .alignright, .site-main .aligncenter {
+    display: block;
+    float: none;
+    margin-right: auto;
+    margin-left: auto; } }
 
 /* COMMENTS */
 .comments-area {

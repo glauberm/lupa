@@ -173,63 +173,57 @@ blockquote {
     padding-bottom: 1rem;
 }
 
-.entry-meta {
-	font-size: 80%;
-	color: $gray-600;
-	/*border: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;*/
-}
-
 /* MAIN */
-.site-main article+article {
-    margin-top: 1rem;
-}
+.site-main {
+	article {
+		&+article {
+		    margin-top: 1rem;
+		}
 
-.site-main article .entry-header {
-    padding: 1rem 0 0.5rem;
+		.entry-header {
+		    padding: 1rem 0 0.5rem;
+		}
 
-    .entry-meta {
-        font-size: 80%;
-    }
-}
+		&:first-child .entry-header {
+		    padding-top: 0;
+		}
+	}
 
-.site-main article:first-child .entry-header {
-    padding-top: 0;
-}
+	#secondary img,
+	article img,
+	figure,
+	img {
+	    margin-bottom: 1rem;
+	}
 
-.site-main #secondary img,
-.site-main article img,
-.site-main figure,
-.site-main img {
-    margin-bottom: 1rem;
-}
+	img.wp-post-image {
+		margin-bottom: 1.75rem;
+	}
 
-.site-main img.wp-post-image {
-	margin-bottom: 1.75rem;
-}
+	.wp-caption-text {
+	    color: $headings-color;
+	    margin-top: -1rem;
+	    padding: 1rem;
+	    font-size: 80%;
+	    font-style: italic;
 
-.site-main .wp-caption-text {
-    color: $headings-color;
-    margin-top: -1rem;
-    padding: 1rem;
-    font-size: 80%;
-    font-style: italic;
+		a {
+			color: lighten($body-color, 10%);
 
-	a {
-		color: lighten($body-color, 10%);
+			&:hover,
+			&:focus,
+			&:active {
+				color: lighten($body-color, 5%);
+			}
+		}
+	}
 
-		&:hover,
-		&:focus,
-		&:active {
-			color: lighten($body-color, 5%);
+	.alignleft, .alignright, .aligncenter {
+		@include media-breakpoint-down(xs) {
+			display: block;
+			float: none;
+			margin-right: auto;
+			margin-left: auto;
 		}
 	}
 }
@@ -383,43 +377,43 @@ blockquote {
 
 /* TABLES */
 table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: $spacer;
-  background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: $spacer;
+	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
 
-  th,
-  td {
-    padding: $table-cell-padding;
-    vertical-align: top;
-    border-top: $table-border-width solid $table-border-color;
-  }
+	th,
+	td {
+		padding: $table-cell-padding;
+		vertical-align: top;
+		border-top: $table-border-width solid $table-border-color;
+	}
 
-  thead th {
-    vertical-align: bottom;
-    border-bottom: (2 * $table-border-width) solid $table-border-color;
-  }
+	thead th {
+		vertical-align: bottom;
+		border-bottom: (2 * $table-border-width) solid $table-border-color;
+	}
 
-  tbody + tbody {
-    border-top: (2 * $table-border-width) solid $table-border-color;
-  }
+	tbody + tbody {
+		border-top: (2 * $table-border-width) solid $table-border-color;
+	}
 
-  table {
-    background-color: $body-bg;
-  }
+	table {
+		background-color: $body-bg;
+	}
 
-  @each $breakpoint in map-keys($grid-breakpoints) {
-    $next: breakpoint-next($breakpoint, $grid-breakpoints);
-    $infix: breakpoint-infix($next, $grid-breakpoints);
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$next: breakpoint-next($breakpoint, $grid-breakpoints);
+		$infix: breakpoint-infix($next, $grid-breakpoints);
 
-    &#{$infix} {
-      @include media-breakpoint-down($breakpoint) {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        -ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
-      }
-    }
-  }
+		&#{$infix} {
+			@include media-breakpoint-down($breakpoint) {
+				display: block;
+				width: 100%;
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+				-ms-overflow-style: -ms-autohiding-scrollbar; // See https://github.com/twbs/bootstrap/pull/10057
+			}
+		}
+	}
 }
