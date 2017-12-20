@@ -29,13 +29,14 @@ add_filter( 'term_description', 'do_shortcode' );
 // Authors shortcode [list_authors]
 function list_authors_func( $atts ) {
     $args = array(
-        'role__not_in' => 'Administrator'
+        'role__in' => 'Editor'
     );
     // The Query
     $user_query = new WP_User_Query( $args );
 
     // User Loop
-    if ( ! empty( $user_query->get_results() ) ) {
+    $user_loop = $user_query->get_results();
+    if (!empty($user_loop)) {
     	foreach ( $user_query->get_results() as $user ) {
     		echo '<h2><a title="'.$user->display_name.'" href="'.get_author_posts_url($user->ID).'">';
             echo $user->display_name;
@@ -47,7 +48,3 @@ function list_authors_func( $atts ) {
     }
 }
 add_shortcode( 'list_authors', 'list_authors_func' );
-
-// HTML in users description
-remove_filter('pre_user_description', 'wp_filter_kses');
-add_filter( 'pre_user_description', 'wp_filter_post_kses' );
