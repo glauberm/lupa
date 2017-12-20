@@ -9,11 +9,11 @@
 
 ?>
 
-<section class="no-results not-found mt-4">
+<section class="no-results not-found">
 
 	<header class="page-header">
 
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'understrap' ); ?></h1>
+		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'understrap' ); ?></h2>
 
 	</header><!-- .page-header -->
 
@@ -70,7 +70,7 @@
 
 		the_widget( 'WP_Widget_Tag_Cloud' );
 		?>
-		
+
 	</div><!-- .page-content -->
 
 </section><!-- .no-results -->

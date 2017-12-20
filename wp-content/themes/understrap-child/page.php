@@ -48,7 +48,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 						<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-							<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+							<?php get_template_part( 'loop-templates/post-thumbnail' ); ?>
 
 							<div class="entry-content">
 

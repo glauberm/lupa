@@ -1,3 +1,3 @@
 # TODO
 
-- Mais microdata?
+- Mais microdata? (tipo nos comentários)

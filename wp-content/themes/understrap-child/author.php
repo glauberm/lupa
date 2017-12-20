@@ -52,21 +52,23 @@ $curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name
 
 					<header class="page-header author-header">
 
-						<dl>
-							<?php if ( ! empty( $curauth->user_url ) ) : ?>
-								<dt>Site</dt>
-								<dd>
-									<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
-								</dd>
-							<?php endif; ?>
+						<?php if ( ! empty( $curauth->user_url ) || ! empty( $curauth->user_description ) ) : ?>
+							<dl>
+								<?php if ( ! empty( $curauth->user_url ) ) : ?>
+									<dt>Site</dt>
+									<dd>
+										<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
+									</dd>
+								<?php endif; ?>
 
-							<?php if ( ! empty( $curauth->user_description ) ) : ?>
-								<dt>Descrição</dt>
-								<dd><?php echo $curauth->user_description; ?></dd>
-							<?php endif; ?>
-						</dl>
+								<?php if ( ! empty( $curauth->user_description ) ) : ?>
+									<dt>Descrição</dt>
+									<dd><?php echo $curauth->user_description; ?></dd>
+								<?php endif; ?>
+							</dl>
+						<?php endif; ?>
 
-						<h2>Postagens de <?php echo esc_html( $curauth->nickname ); ?>:</h2>
+						<h2 class="mb-3">Postagens de <?php echo esc_html( $curauth->nickname ); ?>:</h2>
 
 					</header><!-- .page-header -->
 

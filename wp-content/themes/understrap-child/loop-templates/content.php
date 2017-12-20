@@ -16,7 +16,7 @@
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<?php get_template_part( 'loop-templates/post-thumbnail' ); ?>
 
 	<div class="entry-content">
 
