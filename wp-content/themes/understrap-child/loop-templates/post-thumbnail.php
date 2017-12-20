@@ -2,9 +2,9 @@
     <figure class="wp-caption alignnone">
         <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
         <figcaption class="wp-caption-text">
-            <?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?>
+            <div itemprop="image"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></div>
         </figcaption>
     </figure>
 <?php else : ?>
-    <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+    <div itemprop="image"><?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?></div>
 <?php endif; ?>
