@@ -90,7 +90,7 @@ blockquote {
     border-color: transparent;
 }
 
-.navbar .navbar-brand-wrapper .navbar-brand {
+.navbar .navbar-brand {
 	background: #ffe100;
 	background: linear-gradient(45deg, #ffc800 0%,#ffe100 100%);
     padding: .7rem .75rem .75rem .65rem;
@@ -173,6 +173,11 @@ blockquote {
     padding-bottom: 1rem;
 }
 
+.entry-meta {
+	font-size: 80%;
+	color: $gray-600;
+}
+
 /* MAIN */
 .site-main {
 	article {
@@ -224,6 +229,18 @@ blockquote {
 			float: none;
 			margin-right: auto;
 			margin-left: auto;
+		}
+	}
+
+	.entry-author {
+		font-size: 80%;
+		padding: 1rem;
+		border-radius: .25rem;
+		background-color: lighten($body-bg, 5%);
+		margin-top: 1rem;
+
+		img {
+			margin-bottom: 0;
 		}
 	}
 }

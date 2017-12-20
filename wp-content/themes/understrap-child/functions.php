@@ -23,5 +23,31 @@ function theme_enqueue_styles() {
     }
 }
 
-/* Shortcodes in category description */
+// Shortcodes in category description
 add_filter( 'term_description', 'do_shortcode' );
+
+// Authors shortcode [list_authors]
+function list_authors_func( $atts ) {
+    $args = array(
+        'role__not_in' => 'Administrator'
+    );
+    // The Query
+    $user_query = new WP_User_Query( $args );
+
+    // User Loop
+    if ( ! empty( $user_query->get_results() ) ) {
+    	foreach ( $user_query->get_results() as $user ) {
+    		echo '<h2><a title="'.$user->display_name.'" href="'.get_author_posts_url($user->ID).'">';
+            echo $user->display_name;
+            echo '</a></h2>';
+            echo get_the_author_meta('description', $user->ID);
+    	}
+    } else {
+    	echo 'Nenhum integrante encontrado. Talvez a busca possa te ajudar.';
+    }
+}
+add_shortcode( 'list_authors', 'list_authors_func' );
+
+// HTML in users description
+remove_filter('pre_user_description', 'wp_filter_kses');
+add_filter( 'pre_user_description', 'wp_filter_post_kses' );

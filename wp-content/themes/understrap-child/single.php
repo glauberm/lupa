@@ -20,6 +20,10 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
+				<div class="entry-meta styled-subheader">
+					<?php understrap_posted_on(); ?>
+				</div><!-- .entry-meta -->
+
 			</div>
 
 		</header><!-- .entry-header -->
@@ -57,7 +61,9 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 							</div><!-- .entry-content -->
 
-							<br class="invisible"/>
+							<?php get_template_part( 'loop-templates/entry-author' ); ?>
+
+							<br/>
 
 							<div class="entry-footer">
 

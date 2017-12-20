@@ -54,15 +54,15 @@ $curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name
 
 						<dl>
 							<?php if ( ! empty( $curauth->user_url ) ) : ?>
-								<dt><?php esc_html_e( 'Website', 'understrap' ); ?></dt>
+								<dt>Site</dt>
 								<dd>
 									<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
 								</dd>
 							<?php endif; ?>
 
 							<?php if ( ! empty( $curauth->user_description ) ) : ?>
-								<dt><?php esc_html_e( 'Profile', 'understrap' ); ?></dt>
-								<dd><?php echo esc_html( $curauth->user_description ); ?></dd>
+								<dt>Descrição</dt>
+								<dd><?php echo $curauth->user_description; ?></dd>
 							<?php endif; ?>
 						</dl>
 
@@ -84,7 +84,7 @@ $curauth = ( isset( $_GET['author_name'] ) ) ? get_user_by( 'slug', $author_name
 							<?php endwhile; ?>
 
 						<?php else : ?>
-							
+
 							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 						<?php endif; ?>

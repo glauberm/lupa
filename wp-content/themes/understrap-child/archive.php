@@ -19,7 +19,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 	<header class="page-header styled-header">
 		<div class="<?php echo esc_attr( $container ); ?>">
-			<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+			<?php single_term_title( '<h1 class="page-title">', '</h1>' ); ?>
 		</div>
 	</header><!-- .page-header -->
 
