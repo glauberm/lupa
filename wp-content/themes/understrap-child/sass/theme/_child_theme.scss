@@ -173,11 +173,6 @@ blockquote {
     padding-bottom: 1rem;
 }
 
-.entry-meta {
-	font-size: 80%;
-	color: $gray-600;
-}
-
 /* MAIN */
 .site-main {
 	article {
@@ -229,19 +224,6 @@ blockquote {
 			float: none;
 			margin-right: auto;
 			margin-left: auto;
-		}
-	}
-
-	.entry-author {
-		font-size: 80%;
-		padding: 1rem;
-		border-radius: .25rem;
-		background-color: lighten($body-bg, 6.5%);
-		border: 1px dotted $body-bg;
-		margin-top: 1rem;
-
-		img {
-			margin-bottom: 0;
 		}
 	}
 }

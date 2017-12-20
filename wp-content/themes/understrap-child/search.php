@@ -47,7 +47,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 			<?php get_template_part( 'global-templates/primary-check' ); ?>
 
-				<main class="site-main" id="main">
+				<main class="site-main" id="main" itemscope itemtype="https://schema.org/Blog">
 
 					<?php if ( have_posts() ) : ?>
 

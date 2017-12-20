@@ -17,7 +17,7 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper" id="page-wrapper" itemscope itemtype="https://schema.org/Article">
 
 	<header class="entry-header styled-header">
 
@@ -52,11 +52,13 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 							<div class="entry-content">
 
-								<?php the_content(); ?>
+								<div itemprop="articleBody">
+									<?php the_content(); ?>
+								</div>
 
 								<?php
 								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+									'before' => '<div class="page-links" itemprop="pagination">' . __( 'Pages:', 'understrap' ),
 									'after'  => '</div>',
 								) );
 								?>

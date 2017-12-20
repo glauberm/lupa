@@ -20,10 +20,6 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-				<div class="entry-meta styled-subheader">
-					<?php understrap_posted_on(); ?>
-				</div><!-- .entry-meta -->
-
 			</div>
 
 		</header><!-- .entry-header -->
@@ -44,24 +40,24 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 
 					<main class="site-main" id="main">
 
-						<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+						<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" itemscope itemtype="https://schema.org/Article">
 
 							<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 							<div class="entry-content">
 
-								<?php the_content(); ?>
+								<div itemprop="articleBody">
+									<?php the_content(); ?>
+								</div>
 
 								<?php
 								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+									'before' => '<div class="page-links" itemprop="pagination">' . __( 'Pages:', 'understrap' ),
 									'after'  => '</div>',
 								) );
 								?>
 
 							</div><!-- .entry-content -->
-
-							<?php get_template_part( 'loop-templates/entry-author' ); ?>
 
 							<br/>
 
