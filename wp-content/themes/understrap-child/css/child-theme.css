@@ -9620,10 +9620,10 @@ blockquote {
 .navbar-dark .navbar-toggler {
   border-color: transparent; }
 
-.navbar .navbar-brand-wrapper {
+.navbar .navbar-brand-wrapper .navbar-brand {
   background: #ffe100;
   background: linear-gradient(45deg, #ffc800 0%, #ffe100 100%);
-  padding: .35rem .75rem .75rem .65rem;
+  padding: .7rem .75rem .75rem .65rem;
   margin: -1rem 0;
   border-radius: 1rem;
   -webkit-transform: rotateZ(-10deg) scale(1);
@@ -9634,12 +9634,12 @@ blockquote {
   z-index: 2;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
-  .navbar .navbar-brand-wrapper:hover, .navbar .navbar-brand-wrapper:focus, .navbar .navbar-brand-wrapper:active {
+  .navbar .navbar-brand-wrapper .navbar-brand:hover, .navbar .navbar-brand-wrapper .navbar-brand:focus, .navbar .navbar-brand-wrapper .navbar-brand:active {
     -webkit-box-shadow: 0 0.35rem 3rem rgba(38, 29, 0, 0.75);
     box-shadow: 0 0.35rem 3rem rgba(38, 29, 0, 0.75);
     -webkit-transform: rotateZ(-11deg) scale(0.95);
     transform: rotateZ(-11deg) scale(0.95); }
-  .navbar .navbar-brand-wrapper .navbar-brand {
+  .navbar .navbar-brand-wrapper .navbar-brand svg {
     -webkit-transform: rotateZ(8deg);
     transform: rotateZ(8deg);
     margin-right: 0;
@@ -9668,7 +9668,7 @@ blockquote {
 
 /* CONTENT */
 .content {
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
   padding-bottom: 1rem;
   background-color: #fff;
   position: relative;
@@ -9682,16 +9682,17 @@ blockquote {
 
 .entry-meta {
   font-size: 80%;
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap; }
+  color: #868e96;
+  /*border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;*/ }
 
 /* MAIN */
 .site-main article + article {
@@ -9708,9 +9709,11 @@ blockquote {
 .site-main #secondary img,
 .site-main article img,
 .site-main figure,
-.site-main img,
-.site-main img.wp-post-image {
+.site-main img {
   margin-bottom: 1rem; }
+
+.site-main img.wp-post-image {
+  margin-bottom: 1.75rem; }
 
 .site-main .wp-caption-text {
   color: #8c6900;

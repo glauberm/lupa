@@ -90,10 +90,10 @@ blockquote {
     border-color: transparent;
 }
 
-.navbar .navbar-brand-wrapper {
+.navbar .navbar-brand-wrapper .navbar-brand {
 	background: #ffe100;
 	background: linear-gradient(45deg, #ffc800 0%,#ffe100 100%);
-    padding: .35rem .75rem .75rem .65rem;
+    padding: .7rem .75rem .75rem .65rem;
     margin: -1rem 0;
     border-radius: 1rem;
     -webkit-transform: rotateZ(-10deg) scale(1);
@@ -114,7 +114,7 @@ blockquote {
                 transform: rotateZ(-11deg) scale(0.95);
     }
 
-    .navbar-brand {
+    svg {
         -webkit-transform: rotateZ(8deg);
                 transform: rotateZ(8deg);
         margin-right: 0;
@@ -159,7 +159,7 @@ blockquote {
 
 /* CONTENT */
 .content {
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
     padding-bottom: 1rem;
     background-color: $white;
     position: relative;
@@ -175,7 +175,8 @@ blockquote {
 
 .entry-meta {
 	font-size: 80%;
-	border: 0;
+	color: $gray-600;
+	/*border: 0;
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
@@ -184,7 +185,7 @@ blockquote {
 	padding: 0;
 	position: absolute;
 	width: 1px;
-	white-space: nowrap;
+	white-space: nowrap;*/
 }
 
 /* MAIN */
@@ -207,9 +208,12 @@ blockquote {
 .site-main #secondary img,
 .site-main article img,
 .site-main figure,
-.site-main img,
-.site-main img.wp-post-image {
+.site-main img {
     margin-bottom: 1rem;
+}
+
+.site-main img.wp-post-image {
+	margin-bottom: 1.75rem;
 }
 
 .site-main .wp-caption-text {

@@ -1,3 +1,3 @@
 # TODO
 
-- Fundo do navbar-brand-wrapper no <a>.
+- Imagens flutuantes não-flutuantes em xs.
