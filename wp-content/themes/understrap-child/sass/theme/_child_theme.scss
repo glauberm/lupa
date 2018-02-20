@@ -358,6 +358,14 @@ blockquote {
 			border-color: #7d6830;
 		}
 	}
+
+	.wpcf7-response-output {
+		margin: 0 0 1rem !important;
+		padding: 0 1rem 0 !important;
+		text-align: center !important;
+		border: 0 none !important;
+		color: $secondary !important;
+	}
 }
 
 /* VÍDEOS */

@@ -21,14 +21,18 @@
 	<div class="entry-content">
 
 		<?php
-		the_excerpt();
+			if(is_sticky()) {
+				the_content();
+			} else {
+				the_excerpt();
+			}
 		?>
 
 		<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links" itemprop="pagination">' . __( 'Pages:', 'understrap' ),
-			'after'  => '</div>',
-		) );
+			wp_link_pages( array(
+				'before' => '<div class="page-links" itemprop="pagination">' . __( 'Pages:', 'understrap' ),
+				'after'  => '</div>',
+			) );
 		?>
 
 	</div><!-- .entry-content -->
